@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { ChartBar } from './components/ChartBar';
+import { getNewValue } from './utils/getNewValue';
 
 export const INITIAL_DATA = [
   { name: 'Landing Page', time: 7.4 },
@@ -16,7 +17,7 @@ function App() {
     setData((data) =>
       data.map((item) => ({
         ...item,
-        time: +(Math.random() * 10).toFixed(1),
+        time: getNewValue(item.time),
       }))
     );
   };

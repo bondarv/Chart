@@ -4,16 +4,14 @@ import { ChartBar } from './ChartBar';
 
 test('renders initial data', () => {
   render(<ChartBar data={INITIAL_DATA} />);
-  expect(screen.getByText('Landing Page')).toBeInTheDocument();
-  expect(screen.getByText('Configurator')).toBeInTheDocument();
-  expect(screen.getByText('Check-out')).toBeInTheDocument();
-  expect(screen.getByText('Deal')).toBeInTheDocument();
+  INITIAL_DATA.forEach((item) =>
+    expect(screen.getByText(item.name)).toBeInTheDocument()
+  );
 });
 
-test('should render right color', () => {
+test('should display the blue color when the time is displayed', () => {
   render(<ChartBar data={INITIAL_DATA} />);
-  expect(screen.getByText('7.4')).toHaveStyle('background-color: blue');
-  expect(screen.getByText('0.2')).toHaveStyle('background-color: blue');
-  expect(screen.getByText('7')).toHaveStyle('background-color: blue');
-  expect(screen.getByText('3.8')).toHaveStyle('background-color: blue');
+  INITIAL_DATA.forEach((item) =>
+    expect(screen.getByText(item.time)).toHaveStyle('background-color: blue')
+  );
 });
