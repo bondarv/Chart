@@ -7,7 +7,7 @@ export function ChartBar({ data }: { data: DataType[] }) {
   const sum = data.reduce((result, current) => result + current.time, 0);
 
   return (
-    <div style={{ width: '100%' }}>
+    <div>
       {data.map((item, index) => (
         <div key={index} className="bar">
           <span className="bar-title">{item.name}</span>

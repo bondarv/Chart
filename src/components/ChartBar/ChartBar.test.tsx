@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { INITIAL_DATA } from '../App';
+import { INITIAL_DATA } from '../../App';
 import { ChartBar } from './ChartBar';
 
 test('renders initial data', () => {
