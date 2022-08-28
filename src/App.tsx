@@ -9,6 +9,7 @@ export const INITIAL_DATA = [
   { name: 'Check-out', time: 7.0 },
   { name: 'Deal', time: 3.8 },
 ];
+export const INTERVAL_TIME = 31800;
 
 function App() {
   const [data, setData] = useState(INITIAL_DATA);
@@ -23,7 +24,6 @@ function App() {
   };
 
   useEffect(() => {
-    const INTERVAL_TIME = 31800;
     const intervalId = setInterval(updateData, INTERVAL_TIME);
 
     return () => {
