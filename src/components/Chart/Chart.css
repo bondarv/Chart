@@ -1,0 +1,48 @@
+.bar-wrapper {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.bar-name {
+  width: 110px;
+  text-align: right;
+  margin-right: 2%;
+  vertical-align: middle;
+  height: 40px;
+  line-height: 40px;
+}
+
+.bar {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.bar-progress {
+  height: 40px;
+  text-align: center;
+}
+
+.bar-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 600px) {
+  .bar-wrapper {
+    flex-direction: column;
+  }
+
+  .bar-name {
+    height: 20px;
+    line-height: 20px;
+    text-align: left;
+  }
+
+  .bar-progress {
+    height: 20px;
+  }
+}

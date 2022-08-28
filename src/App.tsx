@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { ChartBar } from './components/ChartBar/ChartBar';
+import { Chart } from './components/Chart/Chart';
 import { getNewValue } from './utils/getNewValue';
 
 export const INITIAL_DATA = [
@@ -35,7 +35,7 @@ function App() {
     <div className="app">
       <div className="wrapper">
         <h1 className="title">SPENT TIME (SECONDS)</h1>
-        <ChartBar data={data} />
+        <Chart data={data} />
         <button className="update-button" onClick={updateData}>
           Update data
         </button>

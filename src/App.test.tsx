@@ -10,11 +10,12 @@ test('renders title and  button', () => {
 test('change time on click', () => {
   render(<App />);
   const button = screen.getByText('Update data');
-  const value1 = screen.getByText(INITIAL_DATA[0].time);
-  const value2 = screen.getByText(INITIAL_DATA[1].time);
-  expect(value1).toHaveTextContent(INITIAL_DATA[0].time.toString());
-  expect(value2).toHaveTextContent(INITIAL_DATA[1].time.toString());
+  const value = screen.getAllByText(INITIAL_DATA[0].time);
+  value.forEach((element) =>
+    expect(element).toHaveTextContent(INITIAL_DATA[0].time.toString())
+  );
   fireEvent.click(button);
-  expect(value1).not.toHaveTextContent(INITIAL_DATA[0].time.toString());
-  expect(value2).not.toHaveTextContent(INITIAL_DATA[1].time.toString());
+  value.forEach((element) =>
+    expect(element).not.toHaveTextContent(INITIAL_DATA[0].time.toString())
+  );
 });

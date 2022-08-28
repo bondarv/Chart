@@ -9,52 +9,13 @@
 
 .wrapper {
   width: 100%;
-  box-sizing: border-box;
 }
 
 .title {
   font-size: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 4%;
 }
 
 .update-button {
   cursor: pointer;
-}
-
-.bar {
-  display: flex;
-  width: 100%;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-}
-
-.bar-title {
-  width: 110px;
-  text-align: right;
-  margin-right: 2%;
-  vertical-align: middle;
-  height: 40px;
-  line-height: 40px;
-}
-
-.bar-progress {
-  height: 40px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-@media screen and (max-width: 600px) {
-  .bar {
-    flex-direction: column;
-  }
-
-  .bar-title {
-    height: 20px;
-    line-height: 20px;
-    text-align: left;
-  }
-
-  .bar-progress {
-    height: 20px;
-  }
 }
