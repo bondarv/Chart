@@ -31,6 +31,7 @@
 .bar-progress {
   height: 40px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -46,6 +47,5 @@
 
   .bar-progress {
     height: 20px;
-    box-sizing: border-box;
   }
 }
