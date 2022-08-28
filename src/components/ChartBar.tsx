@@ -17,7 +17,7 @@ export function ChartBar({ data }: { data: DataType[] }) {
                 key={barIndex}
                 style={{
                   width: ((item.time / sum) * 100).toFixed(1) + '%',
-                  backgroundColor: index === barIndex ? 'blue' : 'gray',
+                  backgroundColor: index === barIndex ? '#30d5c8' : '#D3D3D3',
                 }}
                 className="bar-progress"
               >

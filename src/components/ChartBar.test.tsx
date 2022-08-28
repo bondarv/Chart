@@ -12,6 +12,6 @@ test('renders initial data', () => {
 test('should display the blue color when the time is displayed', () => {
   render(<ChartBar data={INITIAL_DATA} />);
   INITIAL_DATA.forEach((item) =>
-    expect(screen.getByText(item.time)).toHaveStyle('background-color: blue')
+    expect(screen.getByText(item.time)).toHaveStyle('background-color: #30d5c8')
   );
 });

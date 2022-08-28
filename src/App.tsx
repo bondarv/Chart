@@ -32,9 +32,11 @@ function App() {
   }, []);
 
   return (
-    <div className="app" style={{ fontFamily: 'Roboto', fontSize: '16px' }}>
-      <div style={{ width: '100%' }}>
-        <div style={{ fontSize: '20px' }}>SPENT TIME (SECONDS)</div>
+    <div className="app">
+      <div className="wrapper">
+        <div style={{ fontSize: '20px', marginBottom: '40px' }}>
+          SPENT TIME (SECONDS)
+        </div>
         <ChartBar data={data} />
         <button
           style={{
