@@ -1,11 +1,14 @@
 import {
-  act,
   cleanup,
   fireEvent,
   render,
   screen,
+  waitFor,
 } from '@testing-library/react';
 import App, { INITIAL_DATA, INTERVAL_TIME } from './App';
+
+const time = INITIAL_DATA[0].time;
+const textContent = time.toString();
 
 beforeEach(() => {
   jest.useFakeTimers();
@@ -25,28 +28,23 @@ test('renders title and  button', () => {
 test('change time on click', () => {
   render(<App />);
   const button = screen.getByText('Update data');
-  const time = INITIAL_DATA[0].time;
   const value = screen.getAllByText(time);
-  value.forEach((element) =>
-    expect(element).toHaveTextContent(time.toString())
-  );
+  value.forEach((element) => expect(element).toHaveTextContent(textContent));
   fireEvent.click(button);
   value.forEach((element) =>
-    expect(element).not.toHaveTextContent(time.toString())
+    expect(element).not.toHaveTextContent(textContent)
   );
 });
 
-test('change time on INTERVAL_TIME', () => {
+test('change time on INTERVAL_TIME', async () => {
   render(<App />);
-  const time = INITIAL_DATA[0].time;
   const value = screen.getAllByText(time);
-  value.forEach((element) =>
-    expect(element).toHaveTextContent(time.toString())
-  );
-  act(() => {
-    jest.advanceTimersByTime(INTERVAL_TIME);
-  });
-  value.forEach((element) =>
-    expect(element).not.toHaveTextContent(time.toString())
+  value.forEach((element) => expect(element).toHaveTextContent(textContent));
+  await waitFor(
+    () =>
+      value.forEach((element) =>
+        expect(element).not.toHaveTextContent(textContent)
+      ),
+    { timeout: INTERVAL_TIME + 1 }
   );
 });
